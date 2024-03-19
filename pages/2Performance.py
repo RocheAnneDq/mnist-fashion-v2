@@ -29,7 +29,7 @@ def app():
         selected_model = 2
     else:
         clf = KNeighborsClassifier(n_neighbors=5)
-        selected)model = 0
+        selected_model = 0
 
     classifier = ''
     if selected_model == 0:    
