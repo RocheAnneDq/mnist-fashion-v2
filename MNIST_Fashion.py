@@ -16,7 +16,7 @@ import time
 
 # Define the Streamlit app
 def app():
-    text = """Classification of MNIST Fasion Dataset"""
+    text = """Classification of the MNIST Fashion Dataset"""
     st.header(text)
 
     # Use session state to track the current form
