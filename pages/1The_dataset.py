@@ -85,6 +85,8 @@ def app():
     # Progress bar reaches 100% after the loop completes
     st.success("Image dataset loading completed!") 
 
+    text = "Go to the Performance page and select a classifier to test its performance."
+
 #run the app
 if __name__ == "__main__":
     app()
