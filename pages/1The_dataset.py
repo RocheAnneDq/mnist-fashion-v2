@@ -37,6 +37,8 @@ def app():
     it's a popular choice for beginners to experiment with image classification."""
     st.write(text)
 
+    progress_bar = st.progress(0, text="Loading the images, please wait...")
+
     # Download and load the Fashion MNIST dataset
     X, y = fetch_openml('Fashion-MNIST', version=1, return_X_y=True)
     
@@ -71,6 +73,16 @@ def app():
     # Show the plot
     plt.tight_layout()
     st.pyplot(fig)
+
+    # update the progress bar
+    for i in range(100):
+        # Update progress bar value
+        progress_bar.progress(i + 1)
+        # Simulate some time-consuming task (e.g., sleep)
+        time.sleep(0.01)
+    
+    # Progress bar reaches 100% after the loop completes
+    st.success("Image dataset loading completed!") 
 
 #run the app
 if __name__ == "__main__":
