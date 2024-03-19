@@ -96,9 +96,9 @@ def app():
 
         st.subheader('Performance Metrics')
         st.text(classification_report(y_test, y_test_pred))
-        
-        st.write(classifier)
-        st.write(report)
+        with st.expander("Click to view classifier description"):
+            st.write(classifier)
+            st.write(report)
 
 
 #run the app
