@@ -51,8 +51,8 @@ def app():
 
     st.image('mnist-fashion.png', caption="MNISt Fashion Dataset""")
 
-    text = """Modified National Institute of Standards and Technology", use_column_width=True)
-    The Fashion MNIST dataset is a popular choice for testing and comparing machine
+    text = """Modified National Institute of Standards and Technology (MNIST) Fashion 
+    dataset is a popular choice for testing and comparing machine
     learning algorithms, particularly those suited for image classification. 
     \nRelatively small size: With 70,000 images, it's computationally efficient to train and 
     test on, making it ideal for initial experimentation and algorithm evaluation.
