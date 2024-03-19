@@ -36,6 +36,7 @@ def app():
 
     if st.button("Begin Test"):
 
+        st.write('List of object class names in Fashion-MNIST')
         # Get the class names from the dataset's documentation
         class_names = [
             'T-shirt/top',
