@@ -56,13 +56,27 @@ def app():
 
         classifier = ''
         if selected_model == 0:    
-            report = """K-Nearest Neighbor"""
+            report = """K-Nearest Neighbors (KNN) can achieve decent accuracy on the Fashion 
+            MNIST dataset for image classification of clothing items. However, it can be
+              computationally expensive due to needing distance comparisons between the test 
+              image and all training images. Additionally, choosing the optimal value for 
+              k (number of neighbors) and potential benefits of dimensionality reduction 
+              techniques for high-dimensional image data are factors to consider for 
+              optimal performance."""
             classifier = 'K-Nearest Neighbor'
         elif selected_model == 1:   # Random Forest
-            report = """Support Vector Mach8ine"""
+            report = """SVMs generally achieve good accuracy on the Fashion MNIST dataset, 
+            correctly classifying a significant portion of the clothing items 
+            (usually above 80%). However, their performance can be influenced by factors like 
+            hyperparameter tuning and may be surpassed by other models like convolutional 
+            neural networks (CNNs) specifically designed for image recognition tasks."""
             classifier = 'Support Vector Machine'
         else:        
-            report = """Naive Bayes"""
+            report = """Naive Bayes achieves decent accuracy on the Fashion MNIST dataset, 
+            likely around 70-80%, due to its simplicity and efficiency. However, more complex 
+            models like convolutional neural networks can achieve significantly higher 
+            accuracy due to their ability to capture the intricate patterns in the 
+            clothing images."""
             classifier = "Naive Bayes"
 
         st.subheader('Performance of the ' + classifier)
