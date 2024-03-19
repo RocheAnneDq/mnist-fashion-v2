@@ -17,6 +17,7 @@ from sklearn.metrics import classification_report
 def app():
 
     st.sidebar.subheader('Select the classifier')
+
     # Create the selecton of classifier
     clf = KNeighborsClassifier(n_neighbors=5)
     selected_model = 0
@@ -51,7 +52,6 @@ def app():
     y_train= st.session_state['y_train']
     y_test = st.session_state['y_test']
 
-    clf = st.session_state['clf']
     clf.fit(X_train, y_train)
     y_test_pred = clf.predict(X_test)
 
