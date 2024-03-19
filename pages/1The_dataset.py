@@ -71,7 +71,6 @@ def app():
     plt.tight_layout()
     st.pyplot(fig)
 
-
 #run the app
 if __name__ == "__main__":
     app()
