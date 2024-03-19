@@ -14,6 +14,22 @@ from sklearn.metrics import classification_report
 # Define the Streamlit app
 def app():
 
+    st.sidebar.subheader('Select the classifier')
+    # Create the selecton of classifier
+    clf = KNeighborsClassifier(n_neighbors=5)
+    options = ['K Nearest Neighbor', 'Support Vector Machine', 'Naive Bayes']
+    selected_option = st.sidebar.selectbox('Select the classifier', options)
+    if selected_option =='Support Vector Machine':
+        clf = SVC(kernel='linear')
+        st.session_state['selected_model'] = 1
+    elif selected_option=='Naive Bayes':        
+        clf = GaussianNB()
+        st.session_state['selected_model'] = 2
+    else:
+        clf = KNeighborsClassifier(n_neighbors=5)
+        st.session_state['selected_model'] = 0
+
+
     classifier = ''
     if st.session_state['selected_model'] == 0:     # decision tree
         report = """Achieves good accuracy, but can be prone to 
