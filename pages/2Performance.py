@@ -35,6 +35,24 @@ def app():
         selected_model = 0
 
     if st.button("Begin Test"):
+
+        # Get the class names from the dataset's documentation
+        class_names = [
+            'T-shirt/top',
+            'Trouser',
+            'Pullover',
+            'Dress',
+            'Coat',
+            'Sandal',
+            'Shirt',
+            'Sneaker',
+            'Bag',
+            'Ankle boot'
+        ]
+
+        # Print the class names
+        st.write(class_names)
+
         classifier = ''
         if selected_model == 0:    
             report = """K-Nearest Neighbor"""
