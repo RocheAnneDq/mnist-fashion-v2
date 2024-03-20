@@ -29,7 +29,7 @@ def app():
     if "mnist" not in st.session_state: 
         st.session_state["mnist"] = []
 
-    text = """Louie F. Cervantes, M. Eng. (Information Engineering) \n\n
+    text = """Rochelle Anne Dinaque BSCS 3B \n\n
     CCS 229 - Intelligent Systems
     Computer Science Department
     College of Information and Communications Technology
