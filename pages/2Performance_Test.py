@@ -12,6 +12,9 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
 
 # Define the Streamlit app
 def app():
@@ -22,7 +25,7 @@ def app():
     clf = KNeighborsClassifier(n_neighbors=5)
     selected_model = 0
 
-    options = ['K Nearest Neighbor', 'Support Vector Machine', 'Naive Bayes']
+    options = ['K Nearest Neighbor', 'Support Vector Machine', 'Naive Bayes','Logistic Regression','Decision Tree','Random Forest']
     selected_option = st.sidebar.selectbox('Select the classifier', options)
     if selected_option =='Support Vector Machine':
         clf = SVC(kernel='linear')
@@ -30,6 +33,19 @@ def app():
     elif selected_option=='Naive Bayes':        
         clf = GaussianNB()
         selected_model = 2
+    elif selected_option=='Logistic Regression':
+        clf = LogisticRegression(C=1.0, class_weight=None, 
+            dual=False, fit_intercept=True,
+            intercept_scaling=1, max_iter=100, multi_class='auto',
+            n_jobs=1, penalty='l2', random_state=42, solver='lbfgs',
+            tol=0.0001, verbose=0, warm_start=False)
+        selected_model = 3
+    elif selected_option=='Decision Tree':
+        clf = DecisionTreeClassifier()
+        selected_model = 4
+    elif selected_option=='Random Forest':
+        clf = RandomForestClassifier(n_jobs=2, random_state=0)
+        selected_model = 5
     else:
         clf = KNeighborsClassifier(n_neighbors=5)
         selected_model = 0
@@ -78,6 +94,7 @@ def app():
             accuracy due to their ability to capture the intricate patterns in the 
             clothing images."""
             classifier = "Naive Bayes"
+        #Edit this part for selected model
 
         st.subheader('Performance of the ' + classifier)
 
